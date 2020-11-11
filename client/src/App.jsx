@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import { HashRouter, Route } from "react-router-dom";
-import Login from "./components/Login";
-import Main from "./components/Main";
+import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
+import Login from "./pages/Login";
+import Main from "./pages/Main";
 
 class App extends Component {
 	render() {
 		return (
 			<div>
-				<HashRouter>
+				<BrowserRouter>
 					<Route exact path="/" component={Main} />
 					<Route path="/login" component={Login} />
-				</HashRouter>
+				</BrowserRouter>
 			</div>
 		);
 	}
