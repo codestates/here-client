@@ -1,0 +1,15 @@
+@value makerHere, makerGreen, makerWhite from '../../common/colors.css';
+
+.footer {
+	height: 5em;
+	width: 100%;
+	background-color: makerWhite;
+	border-top: solid 0.1em makerHere;
+}
+
+.title {
+	top: 3em;
+	color: makerHere;
+	text-align: center;
+	position: relative;
+}

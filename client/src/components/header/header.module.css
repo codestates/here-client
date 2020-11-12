@@ -1,0 +1,30 @@
+@value makerHere, makerGreen, makerWhite, makerBlack from '../../common/colors.css';
+
+.header {
+	width: 100%;
+	padding: 0.5em;
+	text-align: center;
+	background-color: makerWhite;
+	position: relative;
+}
+
+.logo {
+	width: 5em;
+}
+
+.title {
+	color: makerHere;
+}
+
+.myInfo {
+	position: absolute;
+	right: 2.5em;
+	top: 1em;
+	padding: 0.2em;
+	border-radius: 50%;
+	background-color: makerWhite;
+	color: makerHere;
+	outline: 0;
+	border: 0;
+	cursor: pointer;
+}
