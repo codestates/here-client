@@ -1,0 +1,725 @@
+{
+	"html_attributions": [],
+	"next_page_token": "ATtYBwIYTDc-DMqukjdQJHeGERe5x368h-i7j25SPW6tiDrG4JmqbbG4m6WgoLk1xDIuofoMTF1W5rn0u4p_1ka7Ou6xsNodnxFjADcd1mjLbdUA0y1DhVgNFdP0gj2zL5bnKNUbzZ8jBBOu-iH-3_v6IgKcxZzoG-DVSrk6Xsdk_5bsef1eLXForfV5Rh8Wox4-CJ5nGTVXNLbC4uclwWsbJA05esygOCTSEu2v5-ingUtcKCZr8JBnhJV7v8-3Q0oA_K9tr6prnbEh2Xlcqii-2YCbekKhQG4wGzhjF0Mj4Dtbo-sXlNhqhLuv6nG-9n9qwMJ9irZMkjK6xHci8u8t8ygGYO56T2TAXRWkg2llymWeQymBIh0uY9Deg0xpntsK9aYHoEV4belGI10IXNgGHUO0N0oXphamnOfo3m5YqUAJYADx4MM",
+	"results": [
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.54825599999999,
+					"lng": 126.9145983
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5496049802915,
+						"lng": 126.9159472802915
+					},
+					"southwest": {
+						"lat": 37.5469070197085,
+						"lng": 126.9132493197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "피자스쿨합정역점",
+			"photos": [
+				{
+					"height": 628,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/106384849418692463550\"\u003eDY JUNG\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwL90r26-mR-0Efz5n49iTeU85mv8HzZzqf0jKRnk2ni2orGXWlHxcunTF83rywW5-0EQAICHjyWxyhs7C58w8cmbEY2lQDk1_hD7t0Gt-6DH0xbSQFY12qmXdq4A_ntd3LYgicmk0lr_0vsATFw140S0JXewAuKi7Tc3WA6ox5iQVxE",
+					"width": 797
+				}
+			],
+			"place_id": "ChIJxy1xm9aYfDURHMnOmJ9IH8o",
+			"plus_code": {
+				"compound_code": "GWX7+8R 대한민국 서울특별시",
+				"global_code": "8Q98GWX7+8R"
+			},
+			"price_level": 1,
+			"rating": 4,
+			"reference": "ChIJxy1xm9aYfDURHMnOmJ9IH8o",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 28,
+			"vicinity": "마포구 합정동 373-2"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5488262,
+					"lng": 126.9159515
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5501751802915,
+						"lng": 126.9173004802915
+					},
+					"southwest": {
+						"lat": 37.5474772197085,
+						"lng": 126.9146025197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "시타라 Indian Restaurant",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 2160,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/104899291410231850836\"\u003e박치현\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwJ0VZbU6_AHfZDipK5Cc3v6FOEjtJ_x6DrFKICn1YhZ4hHz0Z8_ydnPHRUicZsV6kkpcCuGySJSiAFldnARz0ENM2oFJ6bPiExW-Y0KcY6c-LpyedRTg95E-OpQ6m_oKghPEPgqf668IMh7GwMrs25EncirZ-gUXAK-pmO5INVbCgqJ",
+					"width": 2880
+				}
+			],
+			"place_id": "ChIJ5XLcyNaYfDUR_AI56PWtdxM",
+			"plus_code": {
+				"compound_code": "GWX8+G9 대한민국 서울특별시",
+				"global_code": "8Q98GWX8+G9"
+			},
+			"rating": 3.9,
+			"reference": "ChIJ5XLcyNaYfDUR_AI56PWtdxM",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 154,
+			"vicinity": "마포구 합정동 양화로6길 32"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5484719,
+					"lng": 126.9132859
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.54982088029149,
+						"lng": 126.9146348802915
+					},
+					"southwest": {
+						"lat": 37.5471229197085,
+						"lng": 126.9119369197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "동해수산",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 531,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/115357502431681299564\"\u003e동해수산\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwIAcN4h7vn_dNWL_7LROFGzcLJPdeR_PNW2NO4GsF5xjRbES1yp9iEio4K5usNsMu0RCrfUmGnENaB9518V-6zikTd3lPG2K0WWEfh8iTJ6RTn6Tn_ezcoL8REunkQYY9cPDvsBuHmj5lVHtMzNuTtu7GZaBVgS-IWd14D4SesBeiP7",
+					"width": 700
+				}
+			],
+			"place_id": "ChIJ-zlgeNaYfDUR6aWUGpywcUw",
+			"plus_code": {
+				"compound_code": "GWX7+98 대한민국 서울특별시",
+				"global_code": "8Q98GWX7+98"
+			},
+			"rating": 5,
+			"reference": "ChIJ-zlgeNaYfDUR6aWUGpywcUw",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 1,
+			"vicinity": "마포구 합정동"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5497221,
+					"lng": 126.9119831
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5510710802915,
+						"lng": 126.9133320802915
+					},
+					"southwest": {
+						"lat": 37.5483731197085,
+						"lng": 126.9106341197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "더플레이스 합정역점",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 2592,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/107801347586457299016\"\u003eMichael Kang\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwKjHx4smePem2WR15U6aB89m0cRh4IcCjMVMryYWfDk75rDZyri0SchcUV-Xn0PVIbPpyMNL_SWzhF7mpOtv7rgFoIPL9GVlx8iaxCqV5mH1GiN37JcPlw74xcKvAiIte4TrI-I82t2jmGWsjl1wfTsrYFInF_Lusu_31VAd3M1WKrH",
+					"width": 4608
+				}
+			],
+			"place_id": "ChIJBz8uEdaYfDURKaNRDEdbVLs",
+			"plus_code": {
+				"compound_code": "GWX6+VQ 대한민국 서울특별시",
+				"global_code": "8Q98GWX6+VQ"
+			},
+			"rating": 3.8,
+			"reference": "ChIJBz8uEdaYfDURKaNRDEdbVLs",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 60,
+			"vicinity": "472 마포 한강 푸르지오 상업 시설 지하 2 층, 합정동, 마포구"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5500353,
+					"lng": 126.9114088
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.55138428029149,
+						"lng": 126.9127577802915
+					},
+					"southwest": {
+						"lat": 37.5486863197085,
+						"lng": 126.9100598197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "지리산어탕국수(합정점)",
+			"opening_hours": {
+				"open_now": true
+			},
+			"photos": [
+				{
+					"height": 3000,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/106944580461746235733\"\u003e명지훈\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwKQULsBZ9-Ah0MB69cpneTf0rPyQTHCpYu0DFMyJuP_IE93I5aWV6WygGFra9nD2Xs2IT39HOVKah6EJnGFiSQvKttytOHqQF8QFMO9vuHaxqNSPdXCtZ8BhXt6w6z0m_Anm8thTwcK8DJGkCalAX6mOa0lU9u7DSj2VnFLa66abTI_",
+					"width": 4000
+				}
+			],
+			"place_id": "ChIJEQSmINaYfDURkhxdTpn6MLo",
+			"plus_code": {
+				"compound_code": "HW26+2H 대한민국 서울특별시",
+				"global_code": "8Q98HW26+2H"
+			},
+			"rating": 4.1,
+			"reference": "ChIJEQSmINaYfDURkhxdTpn6MLo",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 211,
+			"vicinity": "마포구 합정동 387-10"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5508142,
+					"lng": 126.9120479
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5521631802915,
+						"lng": 126.9133968802915
+					},
+					"southwest": {
+						"lat": 37.5494652197085,
+						"lng": 126.9106989197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "대한각 大漢閣",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 6000,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/111567837270070723845\"\u003e대한각 大漢閣\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwIAwRs-o3gieYboE88PbATveVYA74vKO9uxQVn2eKISVZFB-cVqmAShkOO2_OYvPdSL-no_-_fL9jRIEitunCaqDfywZhfw-J0B-IDCkxO3Q4W4u0031x_6cBi8TcibP5y4o4zR-u7K_88H5-4CcgtyIzDKuL1rZA26qsaGyPDXvRw",
+					"width": 4000
+				}
+			],
+			"place_id": "ChIJl6Fr8CmZfDURAzutdj60ADE",
+			"plus_code": {
+				"compound_code": "HW26+8R 대한민국 서울특별시",
+				"global_code": "8Q98HW26+8R"
+			},
+			"rating": 4,
+			"reference": "ChIJl6Fr8CmZfDURAzutdj60ADE",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 169,
+			"vicinity": "월드컵로3길 14 마포한강푸르지오2차 상업시설 226호 커피빈뒷집 마포구 서울특별시 KR"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.54973020000001,
+					"lng": 126.9146984
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.55107918029151,
+						"lng": 126.9160473802915
+					},
+					"southwest": {
+						"lat": 37.54838121970851,
+						"lng": 126.9133494197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "호밀밭의호두꾼 합정점",
+			"photos": [
+				{
+					"height": 1184,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/116180933096994895750\"\u003e汝昄 조성도\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwLPHpUf-102fhwosP7LEkbth3YuP2ExvdN6oalO2vRsaHpGg8vE1B8y2Xc7I8x6PmchYoIgyf5tG-NMyz3O0nj5Gycj79SFnU1NzCb1YdGmBLcIIG10bv1N2BXEKUIOn0-sFOSwyMsZyJOgBTOXz06q5RZJfs8DOd-yDu8KrHubmIbs",
+					"width": 2560
+				}
+			],
+			"place_id": "ChIJdfS55daYfDURQ0FIBQmxuQk",
+			"plus_code": {
+				"compound_code": "GWX7+VV 대한민국 서울특별시",
+				"global_code": "8Q98GWX7+VV"
+			},
+			"rating": 4,
+			"reference": "ChIJdfS55daYfDURQ0FIBQmxuQk",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 4,
+			"vicinity": "마포구 서교동 394-56"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5491677,
+					"lng": 126.9102723
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.55051668029149,
+						"lng": 126.9116212802915
+					},
+					"southwest": {
+						"lat": 37.5478187197085,
+						"lng": 126.9089233197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "경성양꼬치 합정점",
+			"photos": [
+				{
+					"height": 2988,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/105927246542138801141\"\u003eSungshik Gong\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwLK6nafWXXPjRrKQt_yc2sS3OemD-4BVB_4ufiKo-CVYlLeu1lzG-6cvEQAk7wMpfSLAk5bUL34msjCl-QkccgrqocO8EBGIjDRZ3Ge9Q6YCGzGPOHbXMgjEn3LXsV6Got-ucoKy0_78Yx92vgWDz077PSxAcHnVxJJ7ifCcVt5WCQc",
+					"width": 5312
+				}
+			],
+			"place_id": "ChIJT7F3GyqZfDURbQihOl2CkQw",
+			"plus_code": {
+				"compound_code": "GWX6+M4 대한민국 서울특별시",
+				"global_code": "8Q98GWX6+M4"
+			},
+			"price_level": 2,
+			"rating": 4,
+			"reference": "ChIJT7F3GyqZfDURbQihOl2CkQw",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 139,
+			"vicinity": "마포구 합정동 월드컵로1길 48"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5506596,
+					"lng": 126.9141054
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5520085802915,
+						"lng": 126.9154543802915
+					},
+					"southwest": {
+						"lat": 37.54931061970851,
+						"lng": 126.9127564197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "순남시래기 메세나폴리스점",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 3072,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/117640183955694958870\"\u003eJihoon Wyatt\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwLQLm2Gk9sFuQJ9CGxspmOB8qo1pkFgUV5vQ5BdGwSqUIM5MTjkAJIB4C0BpnXOI_RT14nt2YrK_Gg9oH1l1Ya6QNnsQXCr7v_BZGA31XVgMmwvDgzzTUG40eNc4YVYhqb3Ra8AmAhE7MY8_9VlaIz1y9vlN7Rqq96NkhApPmJL_6UT",
+					"width": 4096
+				}
+			],
+			"place_id": "ChIJq6p-jPSYfDURGXvWRmCyGB0",
+			"plus_code": {
+				"compound_code": "HW27+7J 대한민국 서울특별시",
+				"global_code": "8Q98HW27+7J"
+			},
+			"rating": 4.4,
+			"reference": "ChIJq6p-jPSYfDURGXvWRmCyGB0",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 8,
+			"vicinity": "마포구 서교동 490"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5507295,
+					"lng": 126.9141431
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.55207848029149,
+						"lng": 126.9154920802915
+					},
+					"southwest": {
+						"lat": 37.5493805197085,
+						"lng": 126.9127941197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "써브웨이 합정 메세나폴리스",
+			"opening_hours": {
+				"open_now": true
+			},
+			"photos": [
+				{
+					"height": 4032,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/116221087273595768000\"\u003eSeunghoon Lee\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwIPg6ZP3UYIdqq1WyNdi1DQqmA8mRd7FTny5p-r-q6btSip4rcm6xJwp1ZFOGqY72tVske4u-C1kBh0x9H46p4G56J2SinqCg4VWXAQ73zd9k3uxNjC0jPv_jSTk2TxnshZIfe5vVImLxkEuDMcfqVQEzRFBXF0UxpU3d5ZxC4q6a7m",
+					"width": 3024
+				}
+			],
+			"place_id": "ChIJo9IcBNeYfDUR1jW715SLo_c",
+			"plus_code": {
+				"compound_code": "HW27+7M 대한민국 서울특별시",
+				"global_code": "8Q98HW27+7M"
+			},
+			"price_level": 2,
+			"rating": 3.9,
+			"reference": "ChIJo9IcBNeYfDUR1jW715SLo_c",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 25,
+			"vicinity": "마포구 양화로 45 214 호 101 메세나폴리스"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5503683,
+					"lng": 126.90972
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5517172802915,
+						"lng": 126.9110689802915
+					},
+					"southwest": {
+						"lat": 37.5490193197085,
+						"lng": 126.9083710197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "크레이지카츠",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 3024,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/114812388512848239172\"\u003eKim Kanna\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwJqtNwkPPob_2_71mYHsBwBWCvDz_6v0dZ9d8A5wAAq4yWH2fgedT4TTXGr9b7f-I9wgH81Wiko2-qB03jR5Y9nh_meChJLwttxxs4qmNFcW06Db2el1Ya7cLvtGGL_k9ayoDHpG1pcVIjhez-O-aATTtVkO0MdAs8eWJRHhhlwqOZM",
+					"width": 4032
+				}
+			],
+			"place_id": "ChIJx8XdkimZfDURPUjAHaJeYS8",
+			"plus_code": {
+				"compound_code": "HW25+4V 대한민국 서울특별시",
+				"global_code": "8Q98HW25+4V"
+			},
+			"price_level": 2,
+			"rating": 4.4,
+			"reference": "ChIJx8XdkimZfDURPUjAHaJeYS8",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 739,
+			"vicinity": "마포구 합정동 포은로2나길 44"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5487485,
+					"lng": 126.9152385
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5500974802915,
+						"lng": 126.9165874802915
+					},
+					"southwest": {
+						"lat": 37.5473995197085,
+						"lng": 126.9138895197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "우락부락 참숯소갈비",
+			"photos": [
+				{
+					"height": 250,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/108156403612014195704\"\u003e우락부락 참숯소갈비\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwJeJvIepZEWms8plDicx24Lkz0StmJI58LVAeceBQSQ9_HZtABtTOLbS9AZ2yUnN598QmXXg3YD12HurPnes1VblIKPeOWshni5IWU2xES6rX_xg3pqMmMxRnLAnwQ1iaYOP2jzF1zorB56VGcrGUsZfsWE6y5pJPLXXTcUz1cUP0O3",
+					"width": 315
+				}
+			],
+			"place_id": "ChIJ8eG1v9aYfDUR5JAtD7g322I",
+			"plus_code": {
+				"compound_code": "GWX8+F3 대한민국 서울특별시",
+				"global_code": "8Q98GWX8+F3"
+			},
+			"rating": 5,
+			"reference": "ChIJ8eG1v9aYfDUR5JAtD7g322I",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 1,
+			"vicinity": "마포구 합정동"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.548736,
+					"lng": 126.9152386
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5500849802915,
+						"lng": 126.9165875802915
+					},
+					"southwest": {
+						"lat": 37.5473870197085,
+						"lng": 126.9138896197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "돼지대학교 합정무한리필 홍대무한리필 합정맛집 합정고기 합정삼겹살",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 800,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/115008051941987315337\"\u003e돼지대학교 합정무한리필 홍대무한리필 합정맛집 합정고기 합정삼겹살\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwJvFgSc7U2MWBuz7g3b4882FdXzPiKlYoyhMOo4_CsXrD_91Ez_lQzKmt87lmXxu7ZsmV85fC2cN9HGdRDeadxFfz9Lg8ok1mbaU8-7zlcge4gDLxddqne41g6JctSDSW9E-2nW68TM6wCyr96FlJyryI9H8ZQr6L9V12ysqPq7PHLc",
+					"width": 1200
+				}
+			],
+			"place_id": "ChIJZaC7v9aYfDURNyMMgTHvmwI",
+			"plus_code": {
+				"compound_code": "GWX8+F3 대한민국 서울특별시",
+				"global_code": "8Q98GWX8+F3"
+			},
+			"price_level": 1,
+			"rating": 4.1,
+			"reference": "ChIJZaC7v9aYfDURNyMMgTHvmwI",
+			"scope": "GOOGLE",
+			"types": [
+				"liquor_store",
+				"restaurant",
+				"food",
+				"point_of_interest",
+				"store",
+				"establishment"
+			],
+			"user_ratings_total": 304,
+			"vicinity": "마포구 합정동 413-26"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5498664,
+					"lng": 126.915643
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.5512153802915,
+						"lng": 126.9169919802915
+					},
+					"southwest": {
+						"lat": 37.5485174197085,
+						"lng": 126.9142940197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "팔로피자",
+			"opening_hours": {
+				"open_now": false
+			},
+			"photos": [
+				{
+					"height": 3024,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/102284260630975742581\"\u003eNick, Young Ok KIM\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwK64ENJmcTfc-cBpWhO45xXRmbIaDroY6-Y-KBGImUdom7me8gPpoNXlnEmLBsx567Wi5OGCcbsXOW97B26_hAiUmATnJBEugpC14a-QrzXiaWicRnAZgVnw2qjTFcnN-md11tx9N9waDFPuPECVg2ZbCWLmRp7aQvYtJlEH5vEMbe_",
+					"width": 4032
+				}
+			],
+			"place_id": "ChIJTyaAJ9eYfDURj-mH1awUixY",
+			"plus_code": {
+				"compound_code": "GWX8+W7 대한민국 서울특별시",
+				"global_code": "8Q98GWX8+W7"
+			},
+			"rating": 4.3,
+			"reference": "ChIJTyaAJ9eYfDURj-mH1awUixY",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 331,
+			"vicinity": "마포구 서교동 394-65"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5512933,
+					"lng": 126.9153315
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.55264228029149,
+						"lng": 126.9166804802915
+					},
+					"southwest": {
+						"lat": 37.5499443197085,
+						"lng": 126.9139825197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "둘둘치킨",
+			"photos": [
+				{
+					"height": 1000,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/117297840554391680559\"\u003eSangeun Joe\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwJbVEE7FXUScnQ9HZG_brQ_uP_U3c8fkCeL1Clefj-U6Sbo2y7ocIqic3YsaCRacCI-7BaYd62AQLh9ZcfleNCC_rYEXxs-yTVnFWnUhuCekIM1GHefE1aZ72G6OOzA5RHxjz9HVWUS-mK0mafBkhkcMLh0KWfUj8c0XobLrxHSHeZU",
+					"width": 750
+				}
+			],
+			"place_id": "ChIJkRMEQdeYfDURXL8Hnxhnejo",
+			"plus_code": {
+				"compound_code": "HW28+G4 대한민국 서울특별시",
+				"global_code": "8Q98HW28+G4"
+			},
+			"rating": 3,
+			"reference": "ChIJkRMEQdeYfDURXL8Hnxhnejo",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 2,
+			"vicinity": "마포구 서교동 392-14"
+		},
+		{
+			"business_status": "OPERATIONAL",
+			"geometry": {
+				"location": {
+					"lat": 37.5489085,
+					"lng": 126.9167662
+				},
+				"viewport": {
+					"northeast": {
+						"lat": 37.55025748029149,
+						"lng": 126.9181151802915
+					},
+					"southwest": {
+						"lat": 37.5475595197085,
+						"lng": 126.9154172197085
+					}
+				}
+			},
+			"icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+			"name": "돈수백 합정직영점",
+			"opening_hours": {
+				"open_now": true
+			},
+			"photos": [
+				{
+					"height": 3024,
+					"html_attributions": [
+						"\u003ca href=\"https://maps.google.com/maps/contrib/101848517066137394363\"\u003eClaude Web\u003c/a\u003e"
+					],
+					"photo_reference": "ATtYBwIQKwdQsS221BeVOC2gseZelKtHc6Rn5hbRN7Pn6qfV48EFtQ8lBquhx_0V6UEkAhN2EIDEendV0tTufYLsdzsGGtpsJYcmzmxzlEzNY2AUtTffpvhZv8mOMIuCSBzk2FIcea-pakX-ra06mToNwtyo9rVjHXFh7aIUiBhWhuVPHpq6",
+					"width": 4032
+				}
+			],
+			"place_id": "ChIJ7zLwLdGYfDURK1Wki0qhrUc",
+			"plus_code": {
+				"compound_code": "GWX8+HP 대한민국 서울특별시",
+				"global_code": "8Q98GWX8+HP"
+			},
+			"price_level": 2,
+			"rating": 3.7,
+			"reference": "ChIJ7zLwLdGYfDURK1Wki0qhrUc",
+			"scope": "GOOGLE",
+			"types": ["restaurant", "food", "point_of_interest", "establishment"],
+			"user_ratings_total": 116,
+			"vicinity": "마포구 서교동 양화로6길 45"
+		}
+	],
+	"status": "OK"
+}

@@ -1,0 +1,24 @@
+@value makerHere, makerGreen, makerLightPink, makerPink, makerWhite, makerBlack from '../../common/colors.css';
+
+.totalMatzip {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.title {
+	width: 100%;
+	text-align: left;
+	margin-bottom: 1em;
+	margin-left: 2em;
+	color: makerHere;
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	widows: 100%;
+	margin-left: 3em;
+	margin-right: 3em;
+}
