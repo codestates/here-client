@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
-import Login from "./pages/login/Login";
 import Main from "./pages/main/Main";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
@@ -16,7 +15,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Signup from "./pages/signup/Signup";
 import UserDetail from "./pages/userDetail/UserDetail";
-import Home from "./pages/home/Home";
+import ModalPortal from "./pages/ModalPortal";
+import HereModal from "./HereModal";
 
 library.add(
 	fab,
@@ -33,6 +33,7 @@ class App extends Component {
 	state = {
 		isLogin: false,
 		userInfo: null,
+		modal: false,
 	};
 
 	handleResponseSuccess() {
@@ -50,6 +51,9 @@ class App extends Component {
 	// componentDidMount() {
 	// 	this.handleResponseSuccess();
 	// }
+	componentDidMount() {
+		setTimeout(this.handleOpenModal, 2000);
+	}
 
 	handleLogout = () => {
 		axios
@@ -60,20 +64,37 @@ class App extends Component {
 			});
 	};
 
+	handleOpenModal = () => {
+		this.setState({
+			modal: true,
+		});
+	};
+
 	render() {
 		const { isLogin, userInfo } = this.state;
 		return (
 			<div>
-				<BrowserRouter>
+				{this.state.modal && (
+					<ModalPortal>
+						<HereModal />
+					</ModalPortal>
+				)}
+				{/* <BrowserRouter>
 					<Switch>
 						<Route
-							path="/login"
-							render={() => (
-								<Home />
+							path="/"
+							render={
+								() => {
+									this.state.modal && (
+										<ModalPortal>
+											<HereModal />
+										</ModalPortal>
+									);
+								}
 								// <Login
 								// 	handleResponseSuccess={this.handleResponseSuccess.bind(this)}
 								// />
-							)}
+							}
 						/>
 						<Route exact path="/signup" render={() => <Signup />} />
 						<Route exact path="/mypage" render={() => <UserDetail />} />
@@ -95,7 +116,7 @@ class App extends Component {
 							}}
 						/>
 					</Switch>
-				</BrowserRouter>
+				</BrowserRouter> */}
 				{/* <BrowserRouter>
         --> 왜 브라우저라우터를 상위에 선언해야하는지 의문
 					<Switch>
