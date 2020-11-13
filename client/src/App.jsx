@@ -15,6 +15,8 @@ import {
 	faCookie,
 } from "@fortawesome/free-solid-svg-icons";
 import Signup from "./pages/signup/Signup";
+import UserDetail from "./pages/userDetail/UserDetail";
+import Home from "./pages/home/Home";
 
 library.add(
 	fab,
@@ -67,12 +69,14 @@ class App extends Component {
 						<Route
 							path="/login"
 							render={() => (
-								<Login
-									handleResponseSuccess={this.handleResponseSuccess.bind(this)}
-								/>
+								<Home />
+								// <Login
+								// 	handleResponseSuccess={this.handleResponseSuccess.bind(this)}
+								// />
 							)}
 						/>
 						<Route exact path="/signup" render={() => <Signup />} />
+						<Route exact path="/mypage" render={() => <UserDetail />} />
 						<Route
 							exact
 							path="/main"

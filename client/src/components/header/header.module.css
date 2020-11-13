@@ -8,12 +8,16 @@
 	position: relative;
 }
 
-.logo {
-	width: 5em;
+.buttons {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
 }
 
-.title {
-	color: makerHere;
+.logout {
+	position: relative;
+	right: 100px;
+	top: 10px;
 }
 
 .myInfo {
@@ -25,6 +29,14 @@
 	background-color: makerWhite;
 	color: makerHere;
 	outline: 0;
-	border: 0;
+	border: 0.2em solid makerHere;
 	cursor: pointer;
+}
+
+.logo {
+	width: 5em;
+}
+
+.title {
+	color: makerHere;
 }

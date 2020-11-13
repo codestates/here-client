@@ -25,14 +25,7 @@ class Signup extends React.Component {
 
 	handleSignup = e => {
 		e.preventDefault();
-		const {
-			name,
-			nickname,
-			email,
-			mobile,
-			password,
-			confirmpassword,
-		} = this.state;
+		const { name, email, mobile, password, confirmpassword } = this.state;
 
 		const data = {
 			name,

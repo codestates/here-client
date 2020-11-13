@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Matple from "../../components/matple/Matple";
-import Matzip from "../../components/matzip/Matzip";
+import MatzipList from "../../components/matzipList/MatzipList";
 import styles from "./main.module.css";
 
 const Main = () => {
@@ -10,8 +10,8 @@ const Main = () => {
 		<section className={styles.main}>
 			<Header />
 			<div className={styles.container}>
+				<MatzipList />
 				<Matple />
-				<Matzip />
 			</div>
 			<Footer />
 		</section>
