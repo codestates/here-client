@@ -8,7 +8,9 @@ const Header = props => (
 		<div className={styles.buttons}>
 			<Link to={{ pathname: "/login" }}>
 				<div>
-					<button className={styles.logout}>logout</button>
+					<button className={styles.logout} onClick={props.handleLogout}>
+						logout
+					</button>
 				</div>
 			</Link>
 
