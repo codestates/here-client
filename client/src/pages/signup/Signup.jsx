@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import styles from "./signup.module.css";
+import DaumPostCode from "react-daum-postcode";
 
 axios.defaults.withCredentials = true;
 
@@ -10,27 +11,65 @@ class Signup extends React.Component {
 		super(props);
 		this.state = {
 			name: "",
-			nickname: "",
 			email: "",
 			mobile: "",
 			password: "",
 			confirmpassword: "",
 			errorMessage: "",
+			address: "",
+			zoneCode: "",
+			fullAddress: "",
+			location: "",
+			isdaumpost: false,
+			isRegister: false,
+			register: [],
 		};
-		this.handleInputValue = this.handleInputValue.bind(this);
 	}
 	handleInputValue = key => e => {
 		this.setState({ [key]: e.target.value });
 	};
 
+	handleOpen = () => {
+		this.setState({
+			isdaumpost: true,
+		});
+	};
+
+	handleLocation = data => {
+		let AllAddress = data.address;
+		let extraAddress = "";
+
+		if (data.addressType === "R") {
+			if (data.bname !== "") {
+				extraAddress += data.bname;
+			}
+			if (data.buildingName !== "") {
+				extraAddress +=
+					extraAddress !== "" ? `, ${data.buildingName}` : data.buildingName;
+			}
+			AllAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
+		}
+		this.setState({
+			location: AllAddress,
+		});
+	};
+
 	handleSignup = e => {
 		e.preventDefault();
-		const { name, email, mobile, password, confirmpassword } = this.state;
+		const {
+			name,
+			email,
+			mobile,
+			location,
+			password,
+			confirmpassword,
+		} = this.state;
 
 		const data = {
 			name,
 			email,
 			mobile,
+			location,
 			password,
 		};
 
@@ -41,19 +80,43 @@ class Signup extends React.Component {
 				return;
 			}
 		}
+		console.log(data);
+		const fetch = require("node-fetch");
+		fetch("http://localhost:5000/users/signup", {
+			method: "POST", // or 'PUT'
+			body: JSON.stringify(data), // data can be `string` or {object}!
+			headers: {
+				"Content-Type": "application/json",
+			},
+		})
+			.then(res => res.json())
+			.then(response => console.log("Success:", JSON.stringify(response)))
+			.catch(error => console.error("Error:", error));
 
-		axios
-			.post("http://18.223.115.35:3000/users/signup", data)
-			.then(data => {
-				console.log("성공!", data);
-			})
-			.catch(err => {
-				console.dir(err);
-				throw err;
-			});
+		// axios
+		// 	.post("http://localhost:5000/users/signup", data)
+		// 	.then(() => {
+		// 		alert("성공적으로 가입이 완료되었습니다!");
+		// 	})
+		// 	.catch(err => {
+		// 		console.dir(err);
+		// 		console.log(err);
+		// 		throw err;
+		// 	});
 	};
 
 	render() {
+		const { isdaumpost, location } = this.state;
+		const width = 595;
+		const height = 450;
+		const modalStyle = {
+			position: "absolute",
+			top: 200,
+			left: "-45px",
+			zIndex: "100",
+			border: "1px solid #000000",
+			overflow: "hidden",
+		};
 		return (
 			<div>
 				<center>
@@ -68,15 +131,6 @@ class Signup extends React.Component {
 								placeholder="이름"
 							/>
 						</div>
-						{/* 닉네임이 붙게되면 해제
-            <div>
-							<input
-								className={styles.nickname}
-								type="nickname"
-								onChange={this.handleInputValue("name")}
-								placeholder="닉네임"
-							/>
-						</div> */}
 						<div>
 							<input
 								className={styles.email}
@@ -93,6 +147,27 @@ class Signup extends React.Component {
 								placeholder="전화번호"
 							/>
 						</div>
+						<div>
+							<input
+								className={styles.location}
+								type="location"
+								placeholder="선호하는 지역"
+								value={location}
+								onChange={this.handleInputValue("location")}
+								onClick={this.handleOpen}
+								onFocus={this.handleOpen}
+							/>
+						</div>
+						{isdaumpost ? (
+							<DaumPostCode
+								onComplete={this.handleLocation}
+								autoClose
+								width={width}
+								height={height}
+								style={modalStyle}
+								isdaumpost={isdaumpost.toString()}
+							/>
+						) : null}
 						<div>
 							<input
 								className={styles.password}

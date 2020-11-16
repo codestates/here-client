@@ -1,67 +1,71 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
-import Main from "./pages/main/Main";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
-	faUser,
-	faBeer,
-	faCoffee,
-	faWineGlassAlt,
-	faStroopwafel,
-	faAppleAlt,
-	faCookie,
-} from "@fortawesome/free-solid-svg-icons";
-import Signup from "./pages/signup/Signup";
-import UserDetail from "./pages/userDetail/UserDetail";
-import ModalPortal from "./pages/ModalPortal";
+	BrowserRouter as Router,
+	Route,
+	Redirect,
+	Switch,
+} from "react-router-dom";
+import Main from "./pages/main/Main";
 import HereModal from "./HereModal";
+import UserDetail from "./pages/userDetail/UserDetail";
 
-library.add(
-	fab,
-	faUser,
-	faBeer,
-	faCoffee,
-	faWineGlassAlt,
-	faStroopwafel,
-	faAppleAlt,
-	faCookie
-);
-//Auth : 사용자 정보가 있으면~
 class App extends Component {
 	state = {
 		isLogin: false,
 		userInfo: null,
 		modal: false,
+		isReady: true,
+		signIn: true,
+		signUp: true,
 	};
 
-	handleResponseSuccess() {
-		axios
-			.get("http://18.223.115.35:3000/signin") //로그인 성공한 주소
-			.then(res => {
-				this.setState({ isLogin: true, userInfo: res.data });
-				this.props.history.push("/main");
-			})
-			.catch(err => {
-				throw err;
-			});
-	}
+	handleResponseSuccess = () => {
+		// axios
+		// 	.get("http://18.223.115.35:3000/restaurant/get/matpleslike") //로그인 성공한 주소
+		// 	.then(res => {
+		// 		this.setState({ isLogin: true, userInfo: res.data });
+		// 		console.log(res.data);
+		// 		this.props.history.push("/main");
+		// 	})
+		// 	.catch(err => {
+		// 		throw err;
+		// 	});
+	};
 
 	// componentDidMount() {
 	// 	this.handleResponseSuccess();
 	// }
+
 	componentDidMount() {
-		setTimeout(this.handleOpenModal, 2000);
+		const body = document.querySelector("body");
+		body.className = "modalBody";
+		setTimeout(this.handleOpenModal, 3000);
 	}
 
 	handleLogout = () => {
-		axios
-			.post("http://18.223.115.35:3000/logout") //로그아웃 주소받아서
+		const fetch = require("node-fetch");
+		fetch("http://localhost:5000/users/logout", {
+			method: "POST", // or 'PUT'
+			//body: JSON.stringify(), // data can be `string` or {object}!
+			// headers: {
+			// 	"Content-Type": "application/json",
+			// },
+		})
+			// .then(res => res.json())
+			.then(response => console.log("Success:", JSON.stringify(response)))
 			.then(() => {
+				console.log("로그아웃 성공!");
 				this.setState({ isLogin: false, userInfo: null });
-				this.props.history.push("/login");
-			});
+				this.props.history.push("/");
+			})
+			.catch(error => console.error("Error:", error));
+		// axios
+		// 	.post("http://18.223.115.35:3000/logout") //로그아웃 주소받아서
+		// 	.then(() => {
+		// 		this.setState({ isLogin: false, userInfo: null });
+		// 		this.props.history.push("/login");
+		// 	});
 	};
 
 	handleOpenModal = () => {
@@ -71,67 +75,29 @@ class App extends Component {
 	};
 
 	render() {
-		const { isLogin, userInfo } = this.state;
+		const { isLogin, userInfo, modal, isReady, signIn, signUp } = this.state;
 		return (
-			<div>
-				{this.state.modal && (
-					<ModalPortal>
-						<HereModal />
-					</ModalPortal>
-				)}
-				{/* <BrowserRouter>
-					<Switch>
-						<Route
-							path="/"
-							render={
-								() => {
-									this.state.modal && (
-										<ModalPortal>
-											<HereModal />
-										</ModalPortal>
-									);
-								}
-								// <Login
-								// 	handleResponseSuccess={this.handleResponseSuccess.bind(this)}
-								// />
-							}
-						/>
-						<Route exact path="/signup" render={() => <Signup />} />
-						<Route exact path="/mypage" render={() => <UserDetail />} />
-						<Route
-							exact
-							path="/main"
-							render={() => (
-								<Main userInfo={userInfo} handleLogout={this.handleLogout} />
-							)}
-						/>
-						<Route
-							exact
-							path="/"
-							render={() => {
-								if (isLogin) {
-									return <Redirect to="/main" />;
-								}
-								return <Redirect to="/login" />;
-							}}
-						/>
-					</Switch>
-				</BrowserRouter> */}
-				{/* <BrowserRouter>
-        --> 왜 브라우저라우터를 상위에 선언해야하는지 의문
-					<Switch>
-						<Route exact path="/">
-							<Login />
-						</Route>
-						<Route path="/main">
-							<Main />
-						</Route>
-						<Route path="/signup">
-							<Signup />
-						</Route>
-					</Switch>
-				</BrowserRouter> */}
-			</div>
+			<Router>
+				<Switch>
+					<Route exact path="/">
+						{this.state.modal && (
+							<HereModal
+								signIn={signIn}
+								handleResSuccess={this.handleResponseSuccess}
+							/>
+						)}
+					</Route>
+					<Route path="/main">
+						<Main handleLogout={this.handleLogout} />
+					</Route>
+					<Route path="/mypage">
+						<UserDetail />
+					</Route>
+					<Route path="/signup">
+						<HereModal signUp={signUp} />
+					</Route>
+				</Switch>
+			</Router>
 		);
 	}
 }
