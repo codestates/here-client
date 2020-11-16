@@ -77,11 +77,10 @@ const Login = props => {
 							onChange={handleInputValue}></input>
 					</div>
 					<div>
-						{/* <Link to="/signup">아직 아이디가 없으신가요?</Link> */}아직
-						아이디가 없으신가요?
+						<Link to="/signup">아직 아이디가 없으신가요?</Link>
 					</div>
 					<button type="submit" onClick={handleLogin}>
-						{/* <Link to="/main">Login</Link> */}Login
+						<Link to="/main">Login</Link>
 					</button>
 					{<div className="alert-box">{errorMessage}</div>}
 				</form>

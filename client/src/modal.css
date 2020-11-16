@@ -2,8 +2,7 @@
 	box-sizing: border-box;
 }
 
-html,
-body {
+.modalBody {
 	min-height: 100%;
 	height: 100%;
 	background-image: url(https://i.ibb.co/chGpzch/Containers.jpg);

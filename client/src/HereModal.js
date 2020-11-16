@@ -1,24 +1,31 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./modal.css";
 import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
 
-const HereModal = () => {
-	const ref = useRef();
+const HereModal = ({ signIn, signUp }) => {
+	const modalEl = useRef();
+	const history = useHistory();
 
-	// const handleClick = () => {
-	// 	const modal = ref.current;
-	// 	modal.className = "out";
-	// };
+	const handleSignIn = () => {
+		const modal = modalEl.current;
+		modal.className = "out";
+		document.querySelector("body").removeAttribute("class");
+		history.push("/main");
+	};
+
+	const handleSignUp = () => {};
+
 	return (
-		<>
-			<div ref={ref} id="modal-container" className="one">
-				<div className="modal-background">
-					<div className="modal">
-						<Login />
-					</div>
+		<div ref={modalEl} id="modal-container" className="one">
+			<div className="modal-background">
+				<div className="modal">
+					{signIn && <Login onClick={handleSignIn} />}
+					{signUp && <Signup onClick={handleSignUp} />}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

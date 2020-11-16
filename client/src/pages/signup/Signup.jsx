@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import styles from "./signup.module.css";
+import DaumPostCode from "react-daum-postcode";
 
 axios.defaults.withCredentials = true;
 
@@ -10,17 +11,28 @@ class Signup extends React.Component {
 		super(props);
 		this.state = {
 			name: "",
-			nickname: "",
 			email: "",
 			mobile: "",
 			password: "",
 			confirmpassword: "",
 			errorMessage: "",
+			address: "",
+			zoneCode: "",
+			fullAddress: "",
+			isDaumPost: false,
+			isRegister: false,
+			register: [],
 		};
 		this.handleInputValue = this.handleInputValue.bind(this);
 	}
 	handleInputValue = key => e => {
 		this.setState({ [key]: e.target.value });
+	};
+
+	handleOpen = () => {
+		this.setState({
+			isDaumPost: true,
+		});
 	};
 
 	handleSignup = e => {
@@ -54,6 +66,25 @@ class Signup extends React.Component {
 	};
 
 	render() {
+		const {
+			name,
+			phone,
+			address,
+			isDaumPost,
+			fullAddress,
+			zoneCode,
+			isRegister,
+		} = this.state;
+		const width = 595;
+		const height = 450;
+		const modalStyle = {
+			position: "absolute",
+			top: 0,
+			left: "-178px",
+			zIndex: "100",
+			border: "1px solid #000000",
+			overflow: "hidden",
+		};
 		return (
 			<div>
 				<center>
@@ -68,15 +99,6 @@ class Signup extends React.Component {
 								placeholder="이름"
 							/>
 						</div>
-						{/* 닉네임이 붙게되면 해제
-            <div>
-							<input
-								className={styles.nickname}
-								type="nickname"
-								onChange={this.handleInputValue("name")}
-								placeholder="닉네임"
-							/>
-						</div> */}
 						<div>
 							<input
 								className={styles.email}
@@ -93,6 +115,24 @@ class Signup extends React.Component {
 								placeholder="전화번호"
 							/>
 						</div>
+						<div>
+							<input
+								className={styles.location}
+								type="location"
+								placeholder="선호하는 지역"
+								onClick={this.handleOpen}
+							/>
+						</div>
+						{isDaumPost ? (
+							<DaumPostCode
+								onComplete={this.handleLocation}
+								autoClose
+								width={width}
+								height={height}
+								style={modalStyle}
+								isDaumPost={isDaumPost}
+							/>
+						) : null}
 						<div>
 							<input
 								className={styles.password}
