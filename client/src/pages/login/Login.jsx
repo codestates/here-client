@@ -33,43 +33,42 @@ class Login extends React.Component {
 			this.setState({ errorMessage: "이메일과 비밀번호를 입력하세요" });
 			return;
 		}
-		const data = { email, password };
-		const fetch = require("node-fetch");
-		fetch("http://localhost:5000/users/signin", {
-			method: "POST", // or 'PUT'
-			body: JSON.stringify(data), // data can be `string` or {object}!
-			headers: {
-				"Content-Type": "application/json",
-			},
-		})
-			// .then(res => res.json())
-			.then(response => console.log("Success:", JSON.stringify(response)))
-			.then(() => {
-				console.log("로그인 성공!", data);
-				this.props.handleSignIn();
-			})
-			.catch(error => console.error("Error:", error));
-
-		// return axios
-		// 	.post("http://18.223.115.35:3000/users/signin", {
-		// 		email,
-		// 		password,
-		// 	})
-		// 	.then(data => {
+		//const data = { email, password };
+		// const fetch = require("node-fetch");
+		// fetch("http://18.223.115.35:3000/users/signin", {
+		// 	method: "POST", // or 'PUT'
+		// 	body: JSON.stringify(data), // data can be `string` or {object}!
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// })
+		// 	// .then(res => res.json())
+		// 	.then(response => console.log("Success:", JSON.stringify(response)))
+		// 	.then(() => {
 		// 		console.log("로그인 성공!", data);
 		// 		this.props.handleSignIn();
 		// 	})
-		// 	.catch(err => {
-		// 		alert("이메일과 비밀번호를 다시 확인해주세요.");
-		// 		console.dir(err);
-		// 		throw err;
-		// 	});
+		// 	.catch(error => console.error("Error:", error));
+
+		return axios
+			.post("http://18.223.115.35:3000/users/signin", {
+				email,
+				password,
+			})
+			.then(data => {
+				console.log("로그인 성공!", data);
+				this.props.handleSignIn(data);
+			})
+			.catch(err => {
+				console.dir(err);
+				throw err;
+			});
 	};
 
 	render() {
 		return (
 			<div>
-				<center classname={styles.loginCenter}>
+				<center className={styles.loginCenter}>
 					<img
 						className={styles.logo}
 						src="https://i.ibb.co/8xm0sHy/logo-img-small-1.jpg"
