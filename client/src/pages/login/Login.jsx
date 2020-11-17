@@ -69,7 +69,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<div>
-				<center>
+				<center classname={styles.loginCenter}>
 					<img
 						className={styles.logo}
 						src="https://i.ibb.co/8xm0sHy/logo-img-small-1.jpg"
@@ -81,9 +81,10 @@ class Login extends React.Component {
 						여기지!
 					</h1>
 
-					<form onSubmit={e => e.preventDefault()}>
+					<form className={styles.inputForm} onSubmit={e => e.preventDefault()}>
 						<div>
 							<input
+								className={styles.input}
 								type="email"
 								placeholder="이메일을 입력해 주세요"
 								onChange={this.handleInputValue("email")}
@@ -91,6 +92,7 @@ class Login extends React.Component {
 						</div>
 						<div>
 							<input
+								className={styles.input}
 								type="password"
 								placeholder="비밀번호를 입력 해주세요"
 								onChange={this.handleInputValue("password")}
