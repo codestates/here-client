@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import styles from "./signup.module.css";
 import DaumPostCode from "react-daum-postcode";
@@ -16,9 +16,6 @@ class Signup extends React.Component {
 			password: "",
 			confirmpassword: "",
 			errorMessage: "",
-			address: "",
-			zoneCode: "",
-			fullAddress: "",
 			location: "",
 			isdaumpost: false,
 			isRegister: false,
@@ -80,29 +77,37 @@ class Signup extends React.Component {
 				return;
 			}
 		}
-		console.log(data);
-		const fetch = require("node-fetch");
-		fetch("http://localhost:5000/users/signup", {
-			method: "POST", // or 'PUT'
-			body: JSON.stringify(data), // data can be `string` or {object}!
-			headers: {
-				"Content-Type": "application/json",
-			},
-		})
-			.then(res => res.json())
-			.then(response => console.log("Success:", JSON.stringify(response)))
-			.catch(error => console.error("Error:", error));
+		console.log("보내기전", data);
+		// const fetch = require("node-fetch");
+		// fetch("http://18.223.115.35:3000/users/signup", {
+		// 	method: "POST", // or 'PUT'
+		// 	body: JSON.stringify(data), // data can be `string` or {object}!
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// })
+		// 	.then(res => res.json())
+		// 	.then(response => console.log("Success:", JSON.stringify(response)))
+		// 	.catch(error => console.error("Error:", error));
 
-		// axios
-		// 	.post("http://localhost:5000/users/signup", data)
-		// 	.then(() => {
-		// 		alert("성공적으로 가입이 완료되었습니다!");
-		// 	})
-		// 	.catch(err => {
-		// 		console.dir(err);
-		// 		console.log(err);
-		// 		throw err;
-		// 	});
+		axios
+			.post("http://18.223.115.35:3000/users/signup", data)
+			.then((data, response) => {
+				// if (response.status === 409) {
+				// 	alert("이미 존재하는 이메일입니다.");
+				//   console.log("data", data.email);
+
+				// }
+				console.log("Success:", JSON.stringify(response));
+			})
+			.then(() => {
+				alert("성공적으로 가입이 완료되었습니다!");
+				this.props.history.push("/");
+			})
+			.catch(err => {
+				console.dir(err);
+				throw err;
+			});
 	};
 
 	render() {
@@ -119,10 +124,10 @@ class Signup extends React.Component {
 		};
 		return (
 			<div>
-				<center>
+				<center className={styles.signupCenter}>
 					<img src="/images/main/logo_img_small.jpg" alt="img" />
 					<h1>Sign Up</h1>
-					<form onSubmit={e => e.preventDefault()}>
+					<form className={styles.inputForm} onSubmit={e => e.preventDefault()}>
 						<div>
 							<input
 								className={styles.name}
