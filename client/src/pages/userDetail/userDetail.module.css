@@ -1,0 +1,9 @@
+.userBox {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.userImage {
+	width: 100px;
+	height: 100px;
+}
