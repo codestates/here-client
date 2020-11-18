@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "./login.module.css";
 import "../../modal.css";
+import Axios from "axios";
+//mport cookie from "react-cookies";
 //import { render } from "react-dom";
 
 axios.defaults.withCredentials = true;
+axios.defaults.headers.post["Content-Type"] =
+	"application/x-www-form-urlencoded";
 
 class Login extends React.Component {
 	constructor(props) {
@@ -14,6 +18,7 @@ class Login extends React.Component {
 			email: "",
 			password: "",
 			errorMessage: "",
+			userInfo: {},
 		};
 	}
 
@@ -25,7 +30,7 @@ class Login extends React.Component {
 		this.setState({ [key]: event.currentTarget.value });
 	};
 
-	handleLogin = () => {
+	async handleLogin() {
 		const { email, password } = this.state;
 		console.log(email);
 		console.log(password);
@@ -49,21 +54,46 @@ class Login extends React.Component {
 		// 		this.props.handleSignIn();
 		// 	})
 		// 	.catch(error => console.error("Error:", error));
-
-		return axios
-			.post("http://18.223.115.35:3000/users/signin", {
-				email,
-				password,
-			})
+		// Axios({
+		// 	method: "post",
+		// 	headers: { "Content-Type": "application/x-www-form-urlencoded" },
+		// 	url: "http://18.223.115.35:3000/users/signin",
+		// 	data: email,
+		// 	password,
+		// })
+		// 	.then(function (response) {
+		// 		console.log(response.data);
+		// 	})
+		// 	.catch(err => {
+		// 		console.dir(err);
+		// 		throw err;
+		// 	});
+		const headers = {
+			"Content-Type": "text/plain",
+		};
+		await axios
+			.post(
+				"https://3.208.29.18:443/users/signin",
+				// "https://www.soltylink.com/users/signin",
+				{
+					email,
+					password,
+				},
+				{ headers }
+			)
 			.then(data => {
+				//const userInfo = cookie.load("userInfo");
 				console.log("로그인 성공!", data);
-				this.props.handleSignIn(data);
+				//this.setState({ userInfo: userInfo });
+				//console.log("signin하면 userInfo:", this.state.userInfo);
+				//console.log("data Json=>>", userInfo);
+				this.props.handleSignIn();
 			})
 			.catch(err => {
 				console.dir(err);
 				throw err;
 			});
-	};
+	}
 
 	render() {
 		return (
@@ -100,7 +130,7 @@ class Login extends React.Component {
 						<div>
 							<Link to="/signup">아직 아이디가 없으신가요?</Link>
 						</div>
-						<button type="submit" onClick={this.handleLogin}>
+						<button type="submit" onClick={this.handleLogin.bind(this)}>
 							Login
 						</button>
 						{<div className="alert-box">{this.state.errorMessage}</div>}

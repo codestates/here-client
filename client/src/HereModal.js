@@ -8,12 +8,12 @@ const HereModal = ({ signIn, signUp, handleResSuccess, mail }) => {
 	const modalEl = useRef();
 	//const history = useHistory();
 
-	const handleSignIn = data => {
+	const handleSignIn = () => {
 		//body에 background를 없앤다
 		const modal = modalEl.current;
 		modal.className = "out";
 		document.querySelector("body").removeAttribute("class");
-		handleResSuccess(data);
+		handleResSuccess();
 	};
 
 	return (

@@ -21,21 +21,22 @@ class App extends Component {
 		mail: "",
 	};
 
-	handleResponseSuccess = data => {
+	handleResponseSuccess = () => {
 		//userInfo 담기위한
-		this.setState({ isLogin: true, userInfo: data });
-		console.log("app.js에서 data보이나?", data);
+		// this.setState({ isLogin: true, userInfo: data });
+		// console.log("app.js에서 data보이나?", data);
 		//window.history.pushState("login", "", "/login");
-		// axios
-		// 	.get("http://18.223.115.35:3000/restaurants/get/matpleslike") //==> 에러난지점
-		// 	.then(res => {
-		// 		this.setState({ isLogin: true, userInfo: res.data });
-		// 		console.log("userInfo:", res.data);
-		// 		this.props.history.push("/main");
-		// 	})
-		// 	.catch(err => {
-		// 		throw err;
-		// 	});
+		axios
+			.get("https://3.208.29.18:443/users/mypage")
+			//.get("https://www.soltylink.com/users/mypage")
+			.then(res => {
+				this.setState({ isLogin: true, userInfo: res.data });
+				console.log("userInfo:", res.data);
+				this.props.history.push("/main");
+			})
+			.catch(err => {
+				throw err;
+			});
 	};
 
 	componentDidMount() {
@@ -67,7 +68,7 @@ class App extends Component {
 		// 	})
 		// 	.catch(error => console.error("Error:", error));
 		axios
-			.post("http://18.223.115.35:3000/logout") //로그아웃 주소받아서
+			.post("https://3.208.29.18:443/logout") //로그아웃 주소받아서
 			.then(() => {
 				this.setState({ isLogin: false, userInfo: null });
 				//history.pushState("/login");
