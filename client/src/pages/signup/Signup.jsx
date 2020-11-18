@@ -5,6 +5,7 @@ import styles from "./signup.module.css";
 import DaumPostCode from "react-daum-postcode";
 
 axios.defaults.withCredentials = true;
+axios.baseURL = "https://soltylink.com";
 
 class Signup extends React.Component {
 	constructor(props) {
@@ -91,7 +92,7 @@ class Signup extends React.Component {
 		// 	.catch(error => console.error("Error:", error));
 
 		axios
-			.post("https://3.208.29.18:443/users/signup", data)
+			.post("/users/signup", data)
 			.then((data, response) => {
 				// if (response.status === 409) {
 				// 	alert("이미 존재하는 이메일입니다.");

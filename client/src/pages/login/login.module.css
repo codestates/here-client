@@ -1,13 +1,28 @@
+@value makerHere, makerGreen, makerWhite from "../../common/colors.css";
+
 .input {
-	width: 75%;
-	height: 30px;
-	margin: 5px;
-	border-radius: 5px;
+	background-color: #fafafa;
+	padding: 10px;
+	margin-bottom: 5px;
+	border: 1px solid rgba(var(--ca6, 219, 219, 219), 1);
+	border-radius: 3px;
+	font-size: 12px;
+	width: 330px;
 }
 
-a {
-	color: inherit;
-	text-decoration: none;
+.button {
+	margin-top: 10px;
+	padding: 10px;
+	background-color: makerHere;
+	border: none;
+	border-radius: 3px;
+	font-size: 15px;
+	color: white;
+	cursor: pointer;
+}
+
+::placeholder {
+	color: makerHere;
 }
 
 .loginCenter {
@@ -16,4 +31,9 @@ a {
 
 .inputForm {
 	width: 370px;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
