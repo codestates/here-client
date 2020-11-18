@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "./login.module.css";
-import "../../modal.css";
-import Axios from "axios";
+//import "../../modal.css";
+//mport Axios from "axios";
 //mport cookie from "react-cookies";
 //import { render } from "react-dom";
 
 axios.defaults.withCredentials = true;
-axios.defaults.headers.post["Content-Type"] =
-	"application/x-www-form-urlencoded";
+axios.baseURL = "https://soltylink.com";
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 class Login extends React.Component {
 	constructor(props) {
@@ -68,25 +68,33 @@ class Login extends React.Component {
 		// 		console.dir(err);
 		// 		throw err;
 		// 	});
-		const headers = {
-			"Content-Type": "text/plain",
-		};
+
+		// fetch('https://soltylink.com/users/signin', {
+		//   method: 'POST', // or 'PUT'
+		//   body: JSON.stringify({email:'aass@aass.com', password:'aass'}), // data can be `string` or {object}!
+		//   credentials: "include",
+		//   headers:{
+		//     'Content-Type': 'application/json'
+		//   }
+		// }).then(data=>data.json()) //쿠키에 넣을때 stringify 해줘야함
+		// .then(response => {console.log('Success:', response); document.cookie = `userInfo=${JSON.stringify(response)}`;})
+		// .catch(error => console.error('Error:', error));
+
 		await axios
-			.post(
-				"https://3.208.29.18:443/users/signin",
-				// "https://www.soltylink.com/users/signin",
-				{
-					email,
-					password,
-				},
-				{ headers }
-			)
+			.post("/users/signin", {
+				email,
+				password,
+			})
 			.then(data => {
 				//const userInfo = cookie.load("userInfo");
 				console.log("로그인 성공!", data);
 				//this.setState({ userInfo: userInfo });
 				//console.log("signin하면 userInfo:", this.state.userInfo);
 				//console.log("data Json=>>", userInfo);
+			})
+			.then(response => {
+				console.log("Success:", response);
+				document.cookie = `userInfo=${JSON.stringify(response)}`;
 				this.props.handleSignIn();
 			})
 			.catch(err => {
@@ -127,10 +135,13 @@ class Login extends React.Component {
 								onChange={this.handleInputValue("password")}
 							/>
 						</div>
-						<div>
+						<div className={styles.atag}>
 							<Link to="/signup">아직 아이디가 없으신가요?</Link>
 						</div>
-						<button type="submit" onClick={this.handleLogin.bind(this)}>
+						<button
+							type="submit"
+							className={styles.button}
+							onClick={this.handleLogin.bind(this)}>
 							Login
 						</button>
 						{<div className="alert-box">{this.state.errorMessage}</div>}
