@@ -91,7 +91,7 @@ class Signup extends React.Component {
 		// 	.catch(error => console.error("Error:", error));
 
 		axios
-			.post("http://18.223.115.35:3000/users/signup", data)
+			.post("https://3.208.29.18:443/users/signup", data)
 			.then((data, response) => {
 				// if (response.status === 409) {
 				// 	alert("이미 존재하는 이메일입니다.");
@@ -191,7 +191,10 @@ class Signup extends React.Component {
 						{this.state.errorMessage ? (
 							<div className={styles.error}>{this.state.errorMessage}</div>
 						) : null}
-						<button type="submit" onClick={this.handleSignup}>
+						<button
+							className={styles.button}
+							type="submit"
+							onClick={this.handleSignup}>
 							확인
 						</button>
 					</form>
