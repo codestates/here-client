@@ -6,8 +6,7 @@ import styles from "./userDetail.module.css";
 //import axios from "axios";
 
 const UserDetail = ({ userInfo }) => {
-	let { imageRef, name, email, mobile, location } = userInfo;
-	location = location.split("@");
+	let userLocation = userInfo.location.split("@");
 	// const mypageData = mypageTest[0].User
 	// mypageData.location = mypageData.location.split('@')[0]
 
@@ -28,17 +27,17 @@ const UserDetail = ({ userInfo }) => {
 					<img
 						className={styles.userImage}
 						src={
-							imageRef
-								? imageRef
+							userInfo.imageRef
+								? userInfo.imageRef
 								: "https://i.ibb.co/dgQFdDd/icon-user-default.png"
 						}
 						alt="userimage"
 					/>
 					<div className={styles.userInfo}>
-						<h4>NAME : {name}</h4>
-						<h4>EMAIL : {email}</h4>
-						<h4>MOBILE : {mobile}</h4>
-						<h4>LOCATION : {location[0]}</h4>
+						<h4>NAME : {userInfo.name}</h4>
+						<h4>EMAIL : {userInfo.email}</h4>
+						<h4>MOBILE : {userInfo.mobile}</h4>
+						<h4>LOCATION : {userLocation[0]}</h4>
 					</div>
 					<div calssName={styles.btn}>
 						<button>변경</button>

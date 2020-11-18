@@ -83,7 +83,9 @@ class App extends Component {
 
 	goMain() {
 		console.log("여기까지 옵니까?");
-		this.props.history.push("main");
+		console.log("this:", this);
+		const { history } = this.props;
+		history.push("/main");
 	}
 
 	componentDidMount() {
@@ -130,48 +132,42 @@ class App extends Component {
 	render() {
 		const { isLogin, userInfo, signIn, signUp, matple } = this.state;
 		return (
-			<HashRouter>
-				<Switch>
-					<Route exact path="/">
-						{this.state.modal && (
-							<HereModal
-								signIn={signIn}
-								mail={this.state.mail}
-								handleResSuccess={this.handleResponseSuccess}
-							/>
-						)}
-					</Route>
-					<Route path="main">
-						<Main
-							// handleLogout={this.handleLogout}
-							userInfo={userInfo}
-							matple={matple}
+			<Switch>
+				<Route exact path="/">
+					{this.state.modal && (
+						<HereModal
+							signIn={signIn}
+							mail={this.state.mail}
+							handleResSuccess={this.handleResponseSuccess}
 						/>
-					</Route>
-					<Route path="/mypage">
-						<UserDetail userInfo={userInfo} />
-					</Route>
-					<Route path="/signup">
-						<HereModal signUp={signUp} mail={this.state.mail} />
-					</Route>
-					<Route
-						path="/logout"
-						render={() => {
-							this.handleLogout();
-						}}
-					/>
-					<Route
-						render={({ location }) => (
-							<div>
-								<h2>이 페이지는 존재하지 않습니다:</h2>
-								<p>{location.pathname}</p>
-							</div>
-						)}
-					/>
-				</Switch>
-			</HashRouter>
+					)}
+				</Route>
+				<Route path="/main">
+					<Main userInfo={userInfo} matple={matple} />
+				</Route>
+				<Route path="/mypage">
+					<UserDetail userInfo={userInfo} />
+				</Route>
+				<Route path="/signup">
+					<HereModal signUp={signUp} mail={this.state.mail} />
+				</Route>
+				<Route
+					path="/logout"
+					render={() => {
+						this.handleLogout();
+					}}
+				/>
+				<Route
+					render={({ location }) => (
+						<div>
+							<h2>이 페이지는 존재하지 않습니다:</h2>
+							<p>{location.pathname}</p>
+						</div>
+					)}
+				/>
+			</Switch>
 		);
 	}
 }
 
-export default App;
+export default withRouter(App);
