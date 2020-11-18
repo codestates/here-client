@@ -1,15 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import styles from "./userDetail.module.css";
-import mypageTest from "../../mypageTest.json"
-import axios from "axios";
+//import mypageTest from "../../mypageTest.json";
+//import axios from "axios";
 
-const UserDetail = () => {
+const UserDetail = ({ userInfo }) => {
+	let { imageRef, name, email, mobile, location } = userInfo;
+	location = location.split("@");
+	// const mypageData = mypageTest[0].User
+	// mypageData.location = mypageData.location.split('@')[0]
 
-	const mypageData = mypageTest[0].User
-	mypageData.location = mypageData.location.split('@')[0]
-	
 	// const [mypageData, setUser] = useState(null)
 	// const getUserDetail = async () => {
 	// 	const userData = await axios.post(
@@ -24,19 +25,28 @@ const UserDetail = () => {
 			<Header />
 			<div className={styles.userDetail}>
 				<section className={styles.userBox}>
-					<img className={styles.userImage} src={mypageData.imageRef ? mypageData.imageRef : "https://i.ibb.co/dgQFdDd/icon-user-default.png"} alt="userimage" />
+					<img
+						className={styles.userImage}
+						src={
+							imageRef
+								? imageRef
+								: "https://i.ibb.co/dgQFdDd/icon-user-default.png"
+						}
+						alt="userimage"
+					/>
 					<div className={styles.userInfo}>
-						<h4>NAME : {mypageData.name}</h4>
-						<h4>EMAIL : {mypageData.email}</h4>
-						<h4>MOBILE : {mypageData.mobile}</h4>
-						<h4>LOCATION : {mypageData.location}</h4>
+						<h4>NAME : {name}</h4>
+						<h4>EMAIL : {email}</h4>
+						<h4>MOBILE : {mobile}</h4>
+						<h4>LOCATION : {location[0]}</h4>
 					</div>
-				{/* <div calssName={styles.btn}>
-					<button>변경</button>
-					<button>탈퇴</button>
-				</div> */}	
-			</section>
+					<div calssName={styles.btn}>
+						<button>변경</button>
+						<button>탈퇴</button>
+					</div>
+				</section>
 			</div>
+
 			<Footer />
 		</div>
 	);

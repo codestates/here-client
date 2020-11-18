@@ -5,12 +5,16 @@ import Matple from "../../components/matple/Matple";
 import MatzipList from "../../components/matzipList/MatzipList";
 import styles from "./main.module.css";
 
-const Main = ({ handleLogout }) => {
+const Main = ({ userInfo, matple }) => {
+	console.log("main============>입장");
+	console.log(userInfo);
+
+	//const { matple } = matple;
 	return (
 		<section className={styles.main}>
-			<Header handleLogout={handleLogout} />
+			<Header userInfo={userInfo} />
 			<div className={styles.container}>
-				<MatzipList />
+				<MatzipList matple={matple} />
 				<Matple />
 			</div>
 			<Footer />

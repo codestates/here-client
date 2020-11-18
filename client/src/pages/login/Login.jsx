@@ -8,7 +8,7 @@ import styles from "./login.module.css";
 //import { render } from "react-dom";
 
 axios.defaults.withCredentials = true;
-axios.baseURL = "https://soltylink.com";
+//axios.baseURL = "https://soltylink.com";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 class Login extends React.Component {
@@ -81,21 +81,19 @@ class Login extends React.Component {
 		// .catch(error => console.error('Error:', error));
 
 		await axios
-			.post("/users/signin", {
+			.post("https://soltylink.com/users/signin", {
 				email,
 				password,
 			})
-			.then(data => {
+			.then(res => {
 				//const userInfo = cookie.load("userInfo");
-				console.log("로그인 성공!", data);
+				console.log("로그인 성공!", res.data); //userInfo로 받아야하는 정보
+				//document.cookie = `userInfo=${JSON.stringify(res.data)};
+				//console.log(document.cookie);
+				this.props.handleSignIn(res.data);
 				//this.setState({ userInfo: userInfo });
 				//console.log("signin하면 userInfo:", this.state.userInfo);
 				//console.log("data Json=>>", userInfo);
-			})
-			.then(response => {
-				console.log("Success:", response);
-				document.cookie = `userInfo=${JSON.stringify(response)}`;
-				this.props.handleSignIn();
 			})
 			.catch(err => {
 				console.dir(err);

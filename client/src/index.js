@@ -8,11 +8,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+//import { BrowserRouter } from "react-router-dom";
+
 library.add(fab, fas, far);
-ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
 reportWebVitals();
