@@ -1,19 +1,20 @@
 import React from "react";
 import styles from "./matzipList.module.css";
-import dummyData from "../../test.json";
+//import dummyData from "../../test.json";
 import Matzip from "../matzip/Matzip";
 
-const MatzipList = () => {
+const MatzipList = ({ matple }) => {
 	return (
 		<div className={styles.totalMatzip}>
-			<h1 className={styles.title}>[음식] 맛집</h1>
+			<h1 className={styles.title}>맛플루언서가 선정한 이달의 맛집</h1>
 			<div className={styles.container}>
-				{dummyData.results.map((el, index) => {
+				{matple.map(res => {
 					return (
 						<Matzip
-							key={index}
-							name={el.name}
-							photo={el.photos[0].photo_reference}
+							key={res.id}
+							id={res.id}
+							name={res.name}
+							photo={res.photoRef}
 						/>
 					);
 				})}

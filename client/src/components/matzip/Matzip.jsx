@@ -3,7 +3,7 @@ import styles from "./matzip.module.css";
 
 let apikey = process.env.REACT_APP_APIKEY;
 
-const Matzip = ({ name, photo }) => {
+const Matzip = ({ name, photo, id }) => {
 	const url = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo}&key=${apikey}`;
 	//console.log(url);
 	return (
