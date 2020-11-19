@@ -37,68 +37,74 @@ class Login extends React.Component {
 		if (!email || !password) {
 			this.setState({ errorMessage: "이메일과 비밀번호를 입력하세요" });
 			return;
+		} else {
+			//const data = { email, password };
+			// const fetch = require("node-fetch");
+			// fetch("http://18.223.115.35:3000/users/signin", {
+			// 	method: "POST", // or 'PUT'
+			// 	body: JSON.stringify(data), // data can be `string` or {object}!
+			// 	headers: {
+			// 		"Content-Type": "application/json",
+			// 	},
+			// })
+			// 	// .then(res => res.json())
+			// 	.then(response => console.log("Success:", JSON.stringify(response)))
+			// 	.then(() => {
+			// 		console.log("로그인 성공!", data);
+			// 		this.props.handleSignIn();
+			// 	})
+			// 	.catch(error => console.error("Error:", error));
+			// Axios({
+			// 	method: "post",
+			// 	headers: { "Content-Type": "application/x-www-form-urlencoded" },
+			// 	url: "http://18.223.115.35:3000/users/signin",
+			// 	data: email,
+			// 	password,
+			// })
+			// 	.then(function (response) {
+			// 		console.log(response.data);
+			// 	})
+			// 	.catch(err => {
+			// 		console.dir(err);
+			// 		throw err;
+			// 	});
+
+			// fetch('https://soltylink.com/users/signin', {
+			//   method: 'POST', // or 'PUT'
+			//   body: JSON.stringify({email:'aass@aass.com', password:'aass'}), // data can be `string` or {object}!
+			//   credentials: "include",
+			//   headers:{
+			//     'Content-Type': 'application/json'
+			//   }
+			// }).then(data=>data.json()) //쿠키에 넣을때 stringify 해줘야함
+			// .then(response => {console.log('Success:', response); document.cookie = `userInfo=${JSON.stringify(response)}`;})
+			// .catch(error => console.error('Error:', error));
+			console.log("업데이트4");
+			await axios
+				.post("https://soltylink.com/users/signin", {
+					email,
+					password,
+				})
+				.then(response => {
+					//const userInfo = cookie.load("userInfo");
+					if (response.status === 404) {
+						alert("이메일과 비밀번호를 확인해주세요.");
+						console.log("email", email);
+					}
+					console.log("status서방찾기:", response.status);
+					console.log("로그인 성공!", response.data); //userInfo로 받아야하는 정보
+					//document.cookie = `userInfo=${JSON.stringify(res.data)};
+					//console.log(document.cookie);
+					this.props.handleSignIn(response.data);
+					//this.setState({ userInfo: userInfo });
+					//console.log("signin하면 userInfo:", this.state.userInfo);
+					//console.log("data Json=>>", userInfo);
+				})
+				.catch(err => {
+					console.dir(err);
+					throw err;
+				});
 		}
-		//const data = { email, password };
-		// const fetch = require("node-fetch");
-		// fetch("http://18.223.115.35:3000/users/signin", {
-		// 	method: "POST", // or 'PUT'
-		// 	body: JSON.stringify(data), // data can be `string` or {object}!
-		// 	headers: {
-		// 		"Content-Type": "application/json",
-		// 	},
-		// })
-		// 	// .then(res => res.json())
-		// 	.then(response => console.log("Success:", JSON.stringify(response)))
-		// 	.then(() => {
-		// 		console.log("로그인 성공!", data);
-		// 		this.props.handleSignIn();
-		// 	})
-		// 	.catch(error => console.error("Error:", error));
-		// Axios({
-		// 	method: "post",
-		// 	headers: { "Content-Type": "application/x-www-form-urlencoded" },
-		// 	url: "http://18.223.115.35:3000/users/signin",
-		// 	data: email,
-		// 	password,
-		// })
-		// 	.then(function (response) {
-		// 		console.log(response.data);
-		// 	})
-		// 	.catch(err => {
-		// 		console.dir(err);
-		// 		throw err;
-		// 	});
-
-		// fetch('https://soltylink.com/users/signin', {
-		//   method: 'POST', // or 'PUT'
-		//   body: JSON.stringify({email:'aass@aass.com', password:'aass'}), // data can be `string` or {object}!
-		//   credentials: "include",
-		//   headers:{
-		//     'Content-Type': 'application/json'
-		//   }
-		// }).then(data=>data.json()) //쿠키에 넣을때 stringify 해줘야함
-		// .then(response => {console.log('Success:', response); document.cookie = `userInfo=${JSON.stringify(response)}`;})
-		// .catch(error => console.error('Error:', error));
-
-		await axios
-			.post("https://soltylink.com/users/signin", {
-				email,
-				password,
-			})
-			.then(res => {
-				//const userInfo = cookie.load("userInfo");
-				console.log("로그인 성공!", res.data); //userInfo로 받아야하는 정보
-				//document.cookie = `userInfo=${JSON.stringify(res.data)};
-				//console.log(document.cookie);
-				this.props.handleSignIn(res.data);
-				//this.setState({ userInfo: userInfo });
-				//console.log("signin하면 userInfo:", this.state.userInfo);
-				//console.log("data Json=>>", userInfo);
-			})
-			.catch(err => {
-				console.dir(err);
-				throw err;
-			});
 	}
 
 	render() {

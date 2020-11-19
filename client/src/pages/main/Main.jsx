@@ -2,36 +2,26 @@ import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import Matple from "../../components/matple/Matple";
+import Matzip from "../../components/matzip/Matzip";
 import MatzipList from "../../components/matzipList/MatzipList";
 import styles from "./main.module.css";
 
-const Main = ({ userInfo, matple }) => {
+const Main = ({ userInfo, matple, aroundme }) => {
 	console.log("main============>입장");
-	console.log(userInfo);
-
-	//const { matple } = matple;
+	console.log("main matple:", matple);
+	console.log("main around:", aroundme);
+	const listOfTitle = ["맛플루언서가 선정한 이달의 맛집", "내 주변의 맛집"];
+	//여기까지 잘 됨
 	return (
 		<section className={styles.main}>
 			<Header userInfo={userInfo} />
 			<div className={styles.container}>
-				<MatzipList matple={matple} />
-				<Matple />
+				<MatzipList title={listOfTitle[0]} matple={matple} />
+				<Matple title={listOfTitle[1]} aroundme={aroundme} />
 			</div>
 			<Footer />
 		</section>
-		// <div>
-		// 	<img src="/images/main/logo_img_small.jpg" alt="img" />
-
-		// 	<button
-		// 		onClick={() => {
-		// 			history.push("/login");
-		// 		}}>
-		// 		LOGIN
-		// 	</button>
-		// </div>
 	);
 };
 
 export default Main;
-
-//https://i.ibb.co/8xm0sHy/logo-img-small-1.jpg
