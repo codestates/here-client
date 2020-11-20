@@ -3,13 +3,14 @@
 .matzip {
 	width: 200px;
 	height: 200px;
+	margin-left: 2em;
 	text-align: -webkit-center;
+	background: center;
 }
 
 .photoDiv {
 	display: flex;
 	justify-content: center;
-
 	width: 100px;
 	height: 100px;
 }
@@ -19,10 +20,15 @@
 	max-height: 100%;
 }
 
-.photo:hover {
+.matzip:hover {
 	opacity: 0.6;
 	cursor: pointer;
 }
 
 .title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 60px;
+	background-color: aliceblu;
+	color: rgb(27, 63, 141);
 }

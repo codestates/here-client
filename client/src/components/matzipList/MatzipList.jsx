@@ -3,10 +3,13 @@ import styles from "./matzipList.module.css";
 //import dummyData from "../../test.json";
 import Matzip from "../matzip/Matzip";
 
-const MatzipList = ({ matple }) => {
+const MatzipList = ({ title, matple }) => {
+	console.log("맛플입장~~~~");
+	console.log("matple: ", matple);
+
 	return (
 		<div className={styles.totalMatzip}>
-			<h1 className={styles.title}>맛플루언서가 선정한 이달의 맛집</h1>
+			<h1 className={styles.title}>{title}</h1>
 			<div className={styles.container}>
 				{matple.map(res => {
 					return (
@@ -15,6 +18,8 @@ const MatzipList = ({ matple }) => {
 							id={res.id}
 							name={res.name}
 							photo={res.photoRef}
+							call={res.callNum}
+							location={res.location}
 						/>
 					);
 				})}

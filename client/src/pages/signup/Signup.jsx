@@ -71,14 +71,57 @@ class Signup extends React.Component {
 			password,
 		};
 
-		if (!name || !email || !mobile || !password) {
+		console.log("==== 밥 먹기전 테스트! ===== 보내기전====", data);
+		let tmpEmail = email.split(""),
+			invalidEmail = true;
+		if (tmpEmail.filter(x => x === "@" || x === ".").length === 2) {
+			invalidEmail = false;
+		}
+
+		// first, check valid email. And then check all input stuffs such as name, mobile and password.
+		if (invalidEmail) {
+			this.setState({ errorMessage: "잘못된 이메일 주소입니다." });
+		}
+
+		if (!name || !password) {
 			this.setState({ errorMessage: "모든 항목 필수" });
 			if (password !== confirmpassword) {
 				this.setState({ errorMessage: "비밀번호가 일치하지 않습니다." });
 				return;
 			}
+		} else {
+			let tmpMobile;
+			if (
+				mobile.length === 8 &&
+				mobile.split("").every(x => !isNaN(Number(x)))
+			) {
+				tmpMobile = "010" + mobile;
+			} else if (mobile.length < 8 || mobile.length > 13) {
+				this.setState({ errorMessage: "잘못된 전화번호입니다." });
+			} else {
+				if (mobile.split("").includes("-")) {
+					tmpMobile = mobile.split("-").join("");
+				}
+			}
+			data.mobile = tmpMobile;
+
+			axios
+				.post("https://soltylink.com/users/signup", data)
+				.then(response => {
+					console.log("statusCode 찾기용 전체: ", response);
+					alert("성공적으로 가입이 완료되었습니다!");
+					this.props.history.push("/");
+				})
+				.catch(err => {
+					if (err.response.status === 409) {
+						alert("이미 존재하는 이메일입니다.");
+						//console.log("email", err.response.email);
+					}
+					console.dir(err);
+					throw err;
+				});
 		}
-		console.log("보내기전", data);
+
 		// const fetch = require("node-fetch");
 		// fetch("http://18.223.115.35:3000/users/signup", {
 		// 	method: "POST", // or 'PUT'
@@ -90,25 +133,6 @@ class Signup extends React.Component {
 		// 	.then(res => res.json())
 		// 	.then(response => console.log("Success:", JSON.stringify(response)))
 		// 	.catch(error => console.error("Error:", error));
-
-		axios
-			.post("https://soltylink.com/users/signup", data)
-			.then((data, response) => {
-				// if (response.status === 409) {
-				// 	alert("이미 존재하는 이메일입니다.");
-				//   console.log("data", data.email);
-
-				// }
-				console.log("Success:", JSON.stringify(response));
-			})
-			.then(() => {
-				alert("성공적으로 가입이 완료되었습니다!");
-				this.props.history.push("/");
-			})
-			.catch(err => {
-				console.dir(err);
-				throw err;
-			});
 	};
 
 	render() {

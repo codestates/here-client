@@ -40,3 +40,7 @@
 	font-size: 18px;
 	color: #2c2c2c;
 }
+
+.userBox input {
+	width: 80%;
+}

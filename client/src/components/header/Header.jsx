@@ -9,11 +9,9 @@ const Header = props => {
 	return (
 		<header className={styles.header}>
 			<div className={styles.buttons}>
-				<Link to={{ pathname: "/login" }}>
+				<Link to={{ pathname: "/logout" }}>
 					<div>
-						<button className={styles.logout} onClick={props.handleLogout}>
-							LOGOUT
-						</button>
+						<button className={styles.logout}>LOGOUT</button>
 					</div>
 				</Link>
 				<Link to={{ pathname: "/mypage" }}>
@@ -32,14 +30,14 @@ const Header = props => {
 				<ul className={styles.menu}>
 					<li
 						onClick={() => {
-							history.push("/logout");
+							history.push("/mypage");
 						}}>
 						MYPAGE
 					</li>
 
 					<li
 						onClick={() => {
-							history.push("/mypage");
+							history.push("/logout");
 						}}>
 						LOGOUT
 					</li>

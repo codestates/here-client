@@ -6,10 +6,15 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+//import reportWebVitals from "./reportWebVitals";
 
-//import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 library.add(fab, fas, far);
-ReactDOM.render(<App />, document.getElementById("root"));
-reportWebVitals();
+ReactDOM.render(
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>,
+	document.getElementById("root")
+);
+//reportWebVitals();
