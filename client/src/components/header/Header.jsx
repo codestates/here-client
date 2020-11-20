@@ -30,14 +30,14 @@ const Header = props => {
 				<ul className={styles.menu}>
 					<li
 						onClick={() => {
-							history.push("/logout");
+							history.push("/mypage");
 						}}>
 						MYPAGE
 					</li>
 
 					<li
 						onClick={() => {
-							history.push("/mypage");
+							history.push("/logout");
 						}}>
 						LOGOUT
 					</li>

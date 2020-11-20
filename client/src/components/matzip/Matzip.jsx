@@ -10,7 +10,8 @@ const Matzip = ({ name, photo, id, call, location }) => {
 
 	console.log("맛집 디테일 테스트!", name, photo, id, call, location);
 	return (
-		<div className={styles.matzip}>
+		//"background-image: url(image.jpg)"
+		<div className={styles.matzip} style={{ backgroundImage: `url(${url})` }}>
 			<div className={styles.photoDiv}>
 				<Link
 					to={{
@@ -23,7 +24,7 @@ const Matzip = ({ name, photo, id, call, location }) => {
 							location,
 						},
 					}}>
-					<img className={styles.photo} src={url} alt="matzip" />
+					{/* <img className={styles.photo} src={url} alt="matzip" /> */}
 				</Link>
 			</div>
 			<p className={styles.title}>{name}</p>
