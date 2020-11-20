@@ -18,7 +18,7 @@ const MatzipDetail = props => {
 	// 	)
 	// 	setMatzip(matzipData.data.sendingData);
 	// };
-	const { id, name, call, photo, location } = props.location.state;
+	let { id, name, call, photo, location } = props.location.state;
 	const url = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo}&key=${apikey}`;
 	location = location.split("@")[0];
 	if (id) {
